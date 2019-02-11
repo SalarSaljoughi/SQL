@@ -44,7 +44,11 @@
 -- GROUP BY last_name;
 
 -- Q4b.
--- ????
+-- SELECT last_name , COUNT(last_name) AS 'qty'
+-- FROM actor
+-- WHERE 'qty' >= 2
+-- GROUP BY last_name;
+
 
 -- Q4c.
 -- UPDATE actor
@@ -67,14 +71,10 @@
 -- JOIN address a ON s.address_id = a.address_id;
 
 -- Q6b.
--- ????
--- SELECT s.staff_id , SUM(p.amount) , p.payment_date
--- FROM payment p
--- JOIN staff s ON s.staff_id = p.staff_id
+-- SELECT staff_id , SUM(amount) 
+-- FROM payment p 
 -- WHERE p.payment_date BETWEEN '2005-08-01' AND '2005-08-31'
--- GROUP BY p.staff_id;
-
-
+-- GROUP BY staff_id;
 
 -- Q6c.
 -- SELECT f.title , COUNT(a.actor_id)
@@ -157,7 +157,7 @@
 -- LIMIT 5;
 
 -- Q8a.
--- CREATE VIEW `top_five_geners` AS SELECT 'SELECT g.name , SUM(p.amount) AS total
+-- CREATE VIEW `top_five_geners` AS SELECT g.name , SUM(p.amount) AS total
 -- FROM category g
 -- JOIN film_category f ON f.category_id = g.category_id
 -- JOIN inventory i ON i.film_id = f.film_id
@@ -165,10 +165,10 @@
 -- JOIN payment p ON p.rental_id = r.rental_id
 -- GROUP BY g.name
 -- ORDER BY total DESC
--- LIMIT 5'
+-- LIMIT 5;
 
 -- Q8b.
--- SHOW CREATE VIEW `top_five_geners';
+-- SELECT * FROM top_five_geners;
 
 -- Q8c.
 -- DROP VIEW `top_five_geners`;
